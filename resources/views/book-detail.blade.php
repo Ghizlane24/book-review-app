@@ -125,9 +125,11 @@
                                     <h3>Reviews</h3>
                                     <div>
                                         @if(Auth::check())
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        @if(Auth::user()->role == 'user')
+                                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                            Add Review
                                         </button>
+                                        @endif
                                         @else
                                         <a href="{{ route('account.login') }}" class="btn btn-primary">Add Review</a>
                                         @endif 
@@ -193,7 +195,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Review for <strong></strong></h1>
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Review for <strong>{{ $book->title }}</strong></h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="" id="bookRreviewForm" name="bookRreviewForm">
@@ -206,7 +208,7 @@
                         </div>
                         <div class="mb-3">
                             <label for=""  class="form-label">Rating</label>
-                            <select name="rating" id="rating" class="form-control">
+                            <select name="rating" id="rating" class="form-control form-select">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -217,7 +219,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-dark">Submit</button>
                     </div>
                 </form>
             </div>

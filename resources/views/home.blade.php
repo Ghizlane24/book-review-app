@@ -7,19 +7,19 @@
             <div class="col-md-12">
                 <div class="d-flex justify-content-between">
                     <h2 class="mb-3">Books</h2>
-                    <div class="mt-2">
-                        <a href="{{ route('home') }}" class="text-dark">Clear</a>
-                    </div>
+                    
                 </div>
                 <div class="card shadow-lg border-0">
                     <form action="" method="get">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-lg-11 col-md-11">
-                                    <input type="text" value="{{ Request::get('keyword') }}" class="form-control form-control-lg" name="keyword" placeholder="Search by title">
+                                <div class="col-lg-10 col-md-10">
+                                <input type="text" name="keyword" value="{{ request('keyword') }}" class="form-control" placeholder="Search by title">
+
                                 </div>
-                                <div class="col-lg-1 col-md-1">
-                                    <button class="btn btn-primary btn-lg w-100"><i class="fa-solid fa-magnifying-glass"></i></button>                                                                    
+                                <div class="col-lg-2 col-md-2">
+                                    <button class="btn btn-dark"><i class="fa-solid fa-magnifying-glass"></i></button>           
+                                    <a href="{{ route('home') }}" class="btn btn-secondary  ms-2">Clear</a>                                                         
                                 </div>                                                                                 
                             </div>
                         </div>

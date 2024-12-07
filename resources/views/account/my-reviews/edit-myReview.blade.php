@@ -33,7 +33,7 @@
 
                             <div class="mb-3">
                                 <label for=""  class="form-label">Rating</label>
-                                <select name="rating" id="rating" class="form-control">
+                                <select name="rating" id="rating" class="form-control form-select">
                                     <option value="1" {{ $review->rating == 1 ? 'selected'  : ''}}>1</option>
                                     <option value="2" {{ $review->rating == 2 ? 'selected'  : ''}}>2</option>
                                     <option value="3" {{ $review->rating == 3 ? 'selected'  : ''}}>3</option>
@@ -41,7 +41,7 @@
                                     <option value="5" {{ $review->rating == 5 ? 'selected'  : ''}}>5</option>
                                 </select>
                           </div>
-                            <button class="btn btn-primary mt-2">Update</button>                     
+                            <button class="btn btn-dark mt-2">Update</button>                     
                     </form>
                     </div>
                 </div>                

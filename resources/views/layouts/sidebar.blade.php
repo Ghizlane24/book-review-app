@@ -21,6 +21,9 @@
                     <div class="card-body sidebar">
 
                 <ul class="nav flex-column">
+                <li class="nav-item">
+                        <a href="{{ route('account.profile') }}">Profile</a>                               
+                    </li>
                     @if(Auth::user()->role == 'admin')
                         <li class="nav-item">
                             <a href="{{ route('books.index') }}">Books</a>                               
@@ -28,13 +31,13 @@
                         <li class="nav-item">
                             <a href="{{ route('books.reviews') }}">Reviews</a>                               
                         </li>
+                        @else
+                        <li class="nav-item">
+                        <a href="{{ route('account.myReviews') }}">My reviews</a>
+                    </li>
                     @endif
-                    <li class="nav-item">
-                        <a href="{{ route('account.profile') }}">Profile</a>                               
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('account.myReviews') }}">My Reviews</a>
-                    </li>
+                   
+                    
                     <li class="nav-item">
                         <a href="{{ route('account.changePasswordForm') }}">Change Password</a>
                     </li> 

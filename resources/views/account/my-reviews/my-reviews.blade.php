@@ -17,8 +17,8 @@
                     <div class="d-flex justify-content-end">
                     <form action="" method="get">
                                 <div class="d-flex">
-                                    <input type="text" value="{{ Request::get('keyword') }}" class="form-control" placeholder="keyword" name="keyword">
-                                    <button type="submit" class="btn btn-primary ms-2">Search</button>
+                                    <input type="text" value="{{ Request::get('keyword') }}" class="form-control" placeholder="Keyword" name="keyword">
+                                    <button type="submit" class="btn btn-dark ms-2"><i class="fa-solid fa-magnifying-glass"></i></button>
                                     <a href="{{ route('account.myReviews') }}" class="btn btn-secondary ms-2">Clear</a>
                                 </div>
                             </form> 

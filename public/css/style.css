@@ -17,7 +17,38 @@ body{
 }
 
 .header{
-    background-color: var(--btn-bg-primary);
+    background-color: #343a40;
+    background-color: #343a40;
+}
+
+
+.navigation a {
+    font-size: 1rem; 
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+
+.navigation a:hover {
+    color: #ffc107; 
+    text-decoration: underline;
+}
+
+.navbar-brand img {
+    object-fit: contain;
+}
+
+
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navigation a {
+        margin: 0;
+    }
 }
 
 .star-rating {
@@ -55,6 +86,16 @@ body{
     background-color: var(--btn-bg-dark);
     border-color: var(--btn-bg-dark);
 }
+.btn-dark {
+    font-family: var(--btn-font-family);
+    background-color: var(--btn-bg-dark, #343a40);  
+    border-color: var(--btn-border-dark, #343a40);    
+}
+
+.btn-dark:hover {
+    background-color: var(--btn-bg-dark-hover, #343a40);  
+    border-color: var(--btn-border-dark-hover, #343a40);   
+}
 
 .heading{
     font-size: 18px;
@@ -91,7 +132,7 @@ body{
 }
 
 .card-header{
-    background-color: var(--btn-bg-primary);
+    background-color: #343a40;
     font-size: 18px;
 }
 

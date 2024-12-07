@@ -35,19 +35,27 @@ class BookController extends Controller
     // This method will store a book in DB
     public function store(Request $request){
         
-        $rules = [
-            'title' => 'required|min:5',
-            'author' => 'required|min:5',
-            'status' => 'required',
-        ];
+       $rules = [
+        'title' => 'required|min:5',
+        'author' => 'required|min:5',
+        'status' => 'required',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ];
 
-        if(!empty($request->image)){
-            $rules['image'] = 'image';
-        }
+    $messages = [
+        'title.required' => 'The title is required.',
+        'title.min' => 'The title must be at least 5 characters.',
+        'author.required' => 'The author is required.',
+        'author.min' => 'The author must be at least 5 characters.',
+        'status.required' => 'The status is required.',
+        'image.image' => 'The uploaded file must be an image.',
+        'image.mimes' => 'The image must be a file of type: jpeg, png, jpg, gif.',
+        'image.max' => 'The image size must not exceed 2MB.',
+    ];
 
-        $validator = Validator::make($request->all(),$rules);
-
-        if($validator->fails()){
+    $validator = Validator::make($request->all(), $rules, $messages);
+    
+        if ($validator->fails()) {
             return redirect()->route('books.create')->withInput()->withErrors($validator);
         }
 

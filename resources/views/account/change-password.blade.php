@@ -39,7 +39,8 @@
                                 <p class="invalid-feedback">{{ $message }}</p>
                             @enderror
                         </div>
-                        <button class="btn btn-primary mt-2">Update</button> 
+                        <button class="btn btn-dark mt-2">Update</button> 
+                        <a href="{{ route('home') }}" class="btn btn-secondary mt-2 ms-2">Cancel</a>
                         </form>                    
                     </div>
                 </div>                

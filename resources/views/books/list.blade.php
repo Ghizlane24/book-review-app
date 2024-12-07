@@ -15,11 +15,12 @@
                     </div>
                     <div class="card-body pb-0">            
                         <div class="d-flex justify-content-between">
-                            <a href="{{ route('books.create') }}" class="btn btn-primary">Add Book</a>            
+                            <a href="{{ route('books.create') }}" class="btn btn-dark">Add Book</a>            
                                 <form action="" method="get">
                                     <div class="d-flex">
                                         <input type="text" value="{{ Request::get('keyword') }}" class="form-control" placeholder="keyword" name="keyword">
-                                        <button type="submit" class="btn btn-primary ms-2">Search</button>
+                                        <button type="submit" class="btn btn-dark ms-2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                                
                                         <a href="{{ route('books.index') }}" class="btn btn-secondary ms-2">Clear</a>
                                     </div>
                                 </form>
@@ -57,7 +58,7 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="#" class="btn btn-success btn-sm"><i class="fa-regular fa-star"></i></a>
+                                                    
                                                     <a href="{{route('books.edit',$book->id)}}" class="btn btn-primary btn-sm"><i class="fa-regular fa-pen-to-square"></i>
                                                     </a>
                                                     <a href="#" onclick="deleteBook('{{$book->id}}');" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>   
