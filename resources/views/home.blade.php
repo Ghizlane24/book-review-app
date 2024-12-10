@@ -29,7 +29,7 @@
                     @if($books->isNotEmpty())
                         @foreach($books as $book)
                             <div class="col-md-4 col-lg-3 mb-4">
-                                <div class="card border-0 shadow-lg">
+                                <div class="card border-0 shadow-lg h-100">
 
                                     <a href="{{ route('book.detail', $book->id) }}">
                                     @if($book->image != '')

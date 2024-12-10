@@ -15,39 +15,49 @@
 </head>
 
 <body class="bg-light">
-<div class="container-fluid shadow-lg header bg-dark py-3">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <!-- Logo -->
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ asset('uploads/books/book-logo.png') }}" alt="Logo" width="98px" height="100px">
-            </a>
-            <!-- Navigation Links -->
-            <div class="d-flex align-items-center navigation">
-                <!-- Home Link -->
-                <a href="{{ route('home')}}" class="nav-link text-white">Home</a>
-                
-                <!-- Profile Link -->
-                @if(Auth::check())
-                    <a href="{{ route('account.profile')}}" class="nav-link text-white ms-3">Profile</a>
-                    
-                    <!-- Authenticated User Links -->
+    <div class="container-fluid shadow-lg header bg-dark py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <img src="{{ asset('uploads/books/book-logo.png') }}" alt="Logo" width="98px" height="100px">
+                </a>
+                <!-- Navigation Links -->
+                <div class="d-flex align-items-center navigation">
+                    <!-- Home Link -->
+                    <a href="{{ route('home')}}"
+                        class="nav-link text-white {{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
+
+                    <!-- Profile Link -->
+                    @if(Auth::check())
+                    <a href="{{ route('account.profile') }}"
+                        class="nav-link text-white ms-3  {{ request()->routeIs('account.profile') || request()->routeIs('account.changePasswordForm') ? 'active' : '' }}">
+                        Profile
+                    </a>
+
+
+                    <!-- Admin Links -->
                     @if(Auth::user()->role == 'admin')
-                        <a href="{{ route('books.index') }}" class="nav-link text-white ms-3">Books</a>
-                        <a href="{{ route('books.reviews') }}" class="nav-link text-white ms-3">Reviews</a>
+                    <a href="{{ route('books.index') }}"
+                        class="nav-link text-white ms-3 {{ request()->routeIs('books.index') ? 'active' : '' }}">Books</a>
+                    <a href="{{ route('books.reviews') }}"
+                        class="nav-link text-white ms-3 {{ request()->routeIs('books.reviews') ? 'active' : '' }}">Reviews</a>
                     @else
-                        <a href="{{ route('account.myReviews') }}" class="nav-link text-white ms-3">My reviews</a>
+                    <a href="{{ route('account.myReviews') }}"
+                        class="nav-link text-white ms-3 {{ request()->routeIs('account.myReviews') ? 'active' : '' }}">My
+                        reviews</a>
                     @endif
                     <a href="{{ route('account.logout')}}" class="nav-link text-white ms-3">Logout</a>
-                <!-- Guest Links -->
-                @else
-                    <a href="{{ route('account.login')}}" class="nav-link text-white ms-3">Login</a>
-                    <a href="{{ route('account.register')}}" class="nav-link text-white ms-3">Register</a>
-                @endif
+                    @else
+                    <a href="{{ route('account.login')}}"
+                        class="nav-link text-white ms-3 {{ request()->routeIs('account.login') ? 'active' : '' }}">Login</a>
+                    <a href="{{ route('account.register')}}"
+                        class="nav-link text-white ms-3 {{ request()->routeIs('account.register') ? 'active' : '' }}">Register</a>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 

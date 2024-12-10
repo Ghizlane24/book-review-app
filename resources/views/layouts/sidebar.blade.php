@@ -10,7 +10,9 @@
                         </div>
                         <div class="h5 text-center">
                             <strong>{{ Auth::user()->name }}</strong>
+                            @if(Auth::user()->role == 'user')
                             <p class="h6 mt-2 text-muted">{{ (Auth::user()->reviews->count() > 1 ? Auth::user()->reviews->count() .' Reviews' : Auth::user()->reviews->count() .' Review') }}</p>
+                            @endif
                         </div>
                     </div>
                 </div>

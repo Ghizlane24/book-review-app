@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-9">
             @include('layouts.message')
-                <div class="card border-0 shadow">
+                <div class="card border-0 shadow h-100">
                     <div class="card-header  text-white">
                         Change Password
                     </div>

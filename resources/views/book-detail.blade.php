@@ -131,7 +131,7 @@
                                         </button>
                                         @endif
                                         @else
-                                        <a href="{{ route('account.login') }}" class="btn btn-primary">Add Review</a>
+                                        <a href="{{ route('account.login') }}" class="btn btn-dark">Add Review</a>
                                         @endif 
                                           
                                     </div>

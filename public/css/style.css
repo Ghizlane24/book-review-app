@@ -141,3 +141,18 @@ body{
     font-family: var(--btn-font-family);
     font-weight: 500;
 }
+.nav-link.active {
+    font-weight: bold;           
+    color: #f8f9fa;              
+    background-color: #6c757d;   
+    border-radius: 5px;           
+    padding: 8px 15px;            
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.nav-link.active:hover {
+    background-color: #5a6268;    
+    transform: scale(1.05);        
+}
+
